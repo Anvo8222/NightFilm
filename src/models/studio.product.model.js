@@ -7,7 +7,7 @@ const studioProductsSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    categoryStudioProductId: {
+    categoryId: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'studioCategories',
       required: true,
@@ -16,15 +16,7 @@ const studioProductsSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
-    euro: {
-      type: Number,
-      require: true,
-    },
-    canadian: {
-      type: Number,
-      require: true,
-    },
-    indian: {
+    price: {
       type: Number,
       require: true,
     },
@@ -32,20 +24,11 @@ const studioProductsSchema = mongoose.Schema(
       type: String,
       require: true,
     },
-
-    money: [
-      {
-        name: { type: String },
-        price: { type: Number },
-      },
-    ],
-
-    imgStudioProduct: [
-      {
-        id: { type: String },
-        imgStudioUrl: { type: String },
-      },
-    ],
+    imgLogo: {
+      type: String,
+      require: true,
+    },
+    imgProduct: [{ type: String }],
   },
   {
     timestamps: true,

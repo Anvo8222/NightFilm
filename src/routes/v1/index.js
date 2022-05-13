@@ -5,6 +5,7 @@ const docsRoute = require('./docs.route');
 const studioCategoryRoute = require('./stuido.category.route');
 const studioTypeRoute = require('./studio.type.route');
 const studioProductRoute = require('./studio.product.route');
+const uploadFile = require('./uploadFile.route');
 const config = require('../../config/config');
 
 const router = express.Router();
@@ -29,6 +30,10 @@ const defaultRoutes = [
   {
     path: '/studio-product',
     route: studioProductRoute,
+  },
+  {
+    path: '/upload',
+    route: uploadFile,
   },
 ];
 

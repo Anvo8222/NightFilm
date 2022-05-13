@@ -29,16 +29,9 @@ const getAllStudioProduct = catchAsync(async (req, res) => {
 });
 
 const createStudioProduct = catchAsync(async (req, res) => {
-  const productImg = [];
-  req.files.forEach((item) => {
-    const newObj = {
-      imgStudioUrl: item.filename,
-    };
-    productImg.push(newObj);
-  });
-  const result = { ...req.body, imgStudioProduct: productImg };
-  const productStudio = await stuidoProductService.createStudioProduct(result);
-  res.send(productStudio);
+  const result = { ...req.body };
+  const product = await stuidoProductService.createStudioProduct(result);
+  res.send(product);
 });
 
 const getStudioProductById = catchAsync(async (req, res) => {
@@ -49,8 +42,14 @@ const getStudioProductById = catchAsync(async (req, res) => {
   res.send(product);
 });
 
+const updateStudioProduct = catchAsync(async (req, res) => {
+  const product = await stuidoProductService.updateProductById(req.params.id, req.body);
+  res.send(product);
+});
+
 module.exports = {
   createStudioProduct,
   getAllStudioProduct,
   getStudioProductById,
+  updateStudioProduct,
 };

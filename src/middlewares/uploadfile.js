@@ -29,14 +29,10 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-const uploadFileStudio = upload.array('imgStudioUrl', 100);
-const uploadFile = upload.array('imgUrl', 500);
-const uploadSingleFile = upload.single('imgSlider');
-const uploadSingleAvatar = upload.single('image');
+const uploadFileMulti = upload.array('imgStudioUrl', 100);
+const uploadFileSingle = upload.single('imgUrl');
 
 module.exports = {
-  uploadFile,
-  uploadSingleFile,
-  uploadSingleAvatar,
-  uploadFileStudio,
+  uploadFileMulti,
+  uploadFileSingle,
 };

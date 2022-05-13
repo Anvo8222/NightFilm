@@ -4,7 +4,7 @@ const auth = require('../../middlewares/auth');
 const validate = require('../../middlewares/validate');
 const userValidation = require('../../validations/user.validation');
 const userController = require('../../controllers/user.controller');
-const { uploadSingleAvatar } = require('../../middlewares/uploadfile');
+const { uploadFileSingle } = require('../../middlewares/uploadfile');
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.route('/').post(validate(userValidation.createUser), userController.creat
 router
   .route('/:userId')
   .get(validate(userValidation.getUser), userController.getUser)
-  .patch(uploadSingleAvatar, validate(userValidation.updateUser), userController.updateUser)
+  .patch(uploadFileSingle, validate(userValidation.updateUser), userController.updateUser)
   .delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser);
 
 router.get('/', auth('getUsers'), validate(userValidation.getAllUser), userController.getAllUser);

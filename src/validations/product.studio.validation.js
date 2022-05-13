@@ -3,27 +3,21 @@ const Joi = require('joi');
 const createProduct = {
   body: Joi.object().keys({
     name: Joi.string().min(3).max(30).required(),
-    categoryId: Joi.string(),
-    typeProductId: Joi.string(),
+    categoryId: Joi.string().required(),
+    features: Joi.number().required(),
     price: Joi.number().precision(2).required(),
-    priceSale: Joi.number(),
     description: Joi.string().required(),
-    imgProduct: Joi.any(),
-    sizeAndColorAndNumber: Joi.any(),
-    bestSeller: Joi.any(),
+    imgLogo: Joi.string().required(),
+    imgProduct: Joi.array().required(),
   }),
 };
 
 const getAllProduct = {
   query: Joi.object().keys({
     name: Joi.string(),
-    categoryStudioProductId: Joi.string(),
+    categoryId: Joi.string(),
     page: Joi.number().integer(),
     limit: Joi.number().integer(),
-    dollar: Joi.number(),
-    euro: Joi.number(),
-    canadian: Joi.number(),
-    indian: Joi.number(),
   }),
 };
 
@@ -39,20 +33,14 @@ const updateProduct = {
   }),
   body: Joi.object()
     .keys({
-      _id: Joi.string(),
+      _id: Joi.string().required(),
       name: Joi.string().min(3).max(30),
-      productCode: Joi.string().min(3).max(30),
-      categoryId: Joi.string(),
-      typeProductId: Joi.string(),
-      price: Joi.number().precision(2),
-      priceSale: Joi.number(),
-      description: Joi.string(),
-      imgProduct: Joi.any(),
-      imgUrl: Joi.any(),
-      sizeAndColorAndNumber: Joi.any(),
-      dealHot: Joi.any(),
-      bestSeller: Joi.any(),
-      form_data: Joi.any(),
+      categoryId: Joi.string().required(),
+      features: Joi.number().required(),
+      price: Joi.number().precision(2).required(),
+      description: Joi.string().required(),
+      imgLogo: Joi.string().required(),
+      imgProduct: Joi.array().required(),
     })
     .min(1),
 };
