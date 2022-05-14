@@ -4,7 +4,6 @@ const createProduct = {
   body: Joi.object().keys({
     name: Joi.string().min(3).max(30).required(),
     categoryId: Joi.string().required(),
-    features: Joi.number().required(),
     price: Joi.number().precision(2).required(),
     description: Joi.string().required(),
     imgLogo: Joi.string().required(),
@@ -36,7 +35,6 @@ const updateProduct = {
       _id: Joi.string().required(),
       name: Joi.string().min(3).max(30),
       categoryId: Joi.string().required(),
-      features: Joi.number().required(),
       price: Joi.number().precision(2).required(),
       description: Joi.string().required(),
       imgLogo: Joi.string().required(),

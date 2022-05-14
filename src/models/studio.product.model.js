@@ -12,10 +12,6 @@ const studioProductsSchema = mongoose.Schema(
       ref: 'studioCategories',
       required: true,
     },
-    features: {
-      type: Number,
-      require: true,
-    },
     price: {
       type: Number,
       require: true,
