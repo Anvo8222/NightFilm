@@ -7,6 +7,7 @@ const router = express.Router();
 router.post('/', validate(productValidation.createProduct), studioProductController.createStudioProduct);
 
 router.get('/:id', validate(productValidation.getProductId), studioProductController.getStudioProductById);
+router.delete('/:id', validate(productValidation.deleteProduct), studioProductController.deleteStudioProduct);
 router.patch('/:id', validate(productValidation.updateProduct), studioProductController.updateStudioProduct);
 router.get('/', validate(productValidation.getAllProduct), studioProductController.getAllStudioProduct);
 

@@ -47,9 +47,15 @@ const updateStudioProduct = catchAsync(async (req, res) => {
   res.send(product);
 });
 
+const deleteStudioProduct = catchAsync(async (req, res) => {
+  await stuidoProductService.deleteStudioProductById(req.params.id);
+  res.status(httpStatus.NO_CONTENT).send();
+});
+
 module.exports = {
   createStudioProduct,
   getAllStudioProduct,
   getStudioProductById,
   updateStudioProduct,
+  deleteStudioProduct,
 };

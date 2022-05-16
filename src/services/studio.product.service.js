@@ -75,9 +75,24 @@ const updateProductById = async (id, updateBody) => {
   return product;
 };
 
+/**
+ * Delete product by id
+ * @param {ObjectId} productId
+ * @returns {Promise<Product>}
+ */
+ const deleteStudioProductById = async (id) => {
+  const product = await getStudioProductById(id);
+  if (!product) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
+  }
+  await product.remove();
+  return product;
+};
+
 module.exports = {
   createStudioProduct,
   getAllStudioProduct,
   getStudioProductById,
   updateProductById,
-};
+  deleteStudioProductById,
+}
