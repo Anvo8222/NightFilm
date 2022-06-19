@@ -22,6 +22,7 @@ function HomePage(props) {
     dispatch(getAllItem());
     dispatch(getActionMovieList());
   }, []);
+  console.log('actionMovieList', actionMovieList);
   return (
     <>
       <Header />
@@ -34,12 +35,11 @@ function HomePage(props) {
           false
         )}
         {indexItem?.itemsHoatHinh ? <CartoonMovie cartoonMovie={indexItem?.itemsHoatHinh} /> : false}
-
         <div className="flex flex-row gap-4 border-b-[10px] w-[100%] border-solid border-boderColorLayout">
           {indexItem?.itemsMovies ? <OddMovie oddMovie={indexItem?.itemsMovies} /> : false}
           {indexItem?.itemsTopWeek ? <TopViewMovie topViewMovie={indexItem?.itemsTopWeek} /> : false}
         </div>
-        {actionMovieList ? <ActionMovie actionMovieList={actionMovieList} /> : false}
+        {actionMovieList.items ? <ActionMovie actionMovieList={actionMovieList} /> : false}
         <Footer />
       </div>
     </>
