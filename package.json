@@ -2,7 +2,7 @@
   "name": "nightfilm",
   "version": "0.1.0",
   "proxy": "https://khophim.tv/_next/data/V6bDrhkMYdrXJmI_n8Ju9",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://night-film-ad68trlkk-anvo8222.vercel.app",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
