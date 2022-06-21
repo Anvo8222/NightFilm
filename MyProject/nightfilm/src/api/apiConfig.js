@@ -1,0 +1,9 @@
+export const BASE_URL = 'https://api.themoviedb.org/3';
+export const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500';
+export const upcomingMovieAPI = '/movie/upcoming?api_key=0e58516037053b4feb2ac39a241094fe&language=en-US';
+export const trendingMovieAPI = '/trending/all/day?api_key=0e58516037053b4feb2ac39a241094fe&language=en-US';
+export const popularMovieAPI = '/movie/popular?api_key=0e58516037053b4feb2ac39a241094fe&language=en-US';
+export const nowPlayingMovieAPI = '/movie/now_playing?api_key=0e58516037053b4feb2ac39a241094fe&language=en-US';
+export const topRatingMovieAPI = '/movie/top_rated?api_key=0e58516037053b4feb2ac39a241094fe&language=en-US';
+export const actionMovieAPI = '/discover/movie?api_key=0e58516037053b4feb2ac39a241094fe&with_genres=12';
+export const cartoonMovieAPI = '/discover/movie?api_key=0e58516037053b4feb2ac39a241094fe&with_genres=16';

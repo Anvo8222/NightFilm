@@ -1,0 +1,113 @@
+/* header */
+.header {
+  background-image: linear-gradient(0, rgba(0, 0, 0, 0.4), #000000);
+}
+.header__menu-nav {
+  padding-left: 0;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  position: absolute;
+  width: 870px;
+  top: 54px;
+  left: 0;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  list-style: none;
+  padding-left: 20px;
+  margin-left: -14.7px;
+  display: none;
+  animation: hiendan ease-in 0.2s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+@keyframes hiendan {
+  from {
+    transform-origin: scale(0);
+    opacity: 0.2;
+  }
+  to {
+    transform-origin: scale(1);
+    opacity: 1;
+  }
+}
+.profile::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 110px;
+  left: 50px;
+  height: 20px;
+  top: -20px;
+}
+.profile::before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-style: solid;
+  top: -32px;
+  left: 58px;
+  border-width: 16px 16px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.6) transparent;
+}
+.baner {
+  display: block;
+  width: 100%;
+  padding-top: 40%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* header */
+
+/* nav */
+.shortNameThreeDotOneLine {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-height: 1.4rem;
+  overflow: hidden;
+}
+/* nav */
+/* list item nthOfType(2n+1) */
+.nthOfType:nth-of-type(2n + 1) {
+  background-color: rgba(63, 63, 63, 0.2);
+}
+
+/*  */
+
+/* status */
+.triangle::before {
+  content: '';
+  display: block;
+  top: 6px;
+  right: -16px;
+  border-width: 6px 8px;
+  border-color: transparent transparent transparent orange;
+  position: absolute;
+  border-style: solid;
+}
+
+/* animation */
+.showNavBar {
+  transform: translateX(0);
+  animation: left-to-right ease-in 0.1s;
+}
+.hideNavBar {
+  animation: right-to-left ease-in 2s;
+  transform: translateX(-100%);
+}
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes right-to-left {
+  0% {
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* animation */
